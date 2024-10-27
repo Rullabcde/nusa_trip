@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
-import imageSrc1 from "../assets/jogja.jpg";
-import imageSrc2 from "../assets/bali.jpg";
-import imageSrc3 from "../assets/jakarta.jpg";
 
 const images = [
-  { src: imageSrc1, alt: "Banner 1" },
-  { src: imageSrc2, alt: "Banner 2" },
-  { src: imageSrc3, alt: "Banner 3" },
+  { src: "/jogja.jpg", alt: "Image 1" },
+  { src: "/jakarta.jpg", alt: "Image 2" },
+  { src: "/bali.jpg", alt: "Image 3" },
 ];
 
 const Slide = () => {

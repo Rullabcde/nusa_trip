@@ -40,39 +40,37 @@ const Faq = () => {
   return (
     <section id="faq">
       <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
-        <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
-          <div className="mx-auto max-w-2xl lg:text-center flex flex-col items-center">
-            <h2 className="text-base font-semibold leading-7 text-gray-700">
-              FAQ
-            </h2>
-            <p className="mt-2 text-3xl font-bold tracking-tight text-gray-800 sm:text-4xl text-center">
-              Paling Sering Ditanyakan
-            </p>
-          </div>
-          <div className="max-w-3xl mx-auto mt-8 md:mt-16">
-            {faqData.map((faq, index) => (
-              <div
-                key={index}
-                className="transition-all duration-300 bg-white border border-gray-200 shadow-lg rounded-lg cursor-pointer mb-4 hover:shadow-xl transform hover:scale-105">
-                <button
-                  onClick={() => toggleFaq(index)}
-                  className="flex items-center justify-between w-full px-6 py-5 sm:p-8">
-                  <span className="text-lg font-semibold text-gray-800">
-                    {faq.question}
-                  </span>
-                  <FontAwesomeIcon
-                    icon={activeIndex === index ? faChevronUp : faChevronDown}
-                    className="w-6 h-6 text-gray-500 transition-transform duration-200"
-                  />
-                </button>
-                {activeIndex === index && (
-                  <div className="px-6 pb-5 sm:px-8 sm:pb-6 text-gray-600">
-                    <p>{faq.answer}</p>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+        <div className="text-center mb-12">
+          <h2 className="text-base font-semibold font-lato leading-7 text-third">
+            FAQ
+          </h2>
+          <p className="text-3xl font-bold font-poppins tracking-tight text-primary sm:text-4xl">
+            Paling Sering Ditanyakan
+          </p>
+        </div>
+        <div className="max-w-3xl mx-auto">
+          {faqData.map((faq, index) => (
+            <div
+              key={index}
+              className="transition-all duration-300 bg-white border border-gray-200 shadow-lg rounded-lg cursor-pointer mb-4 hover:shadow-xl">
+              <button
+                onClick={() => toggleFaq(index)}
+                className="flex items-center justify-between w-full px-6 py-5 sm:p-6">
+                <span className="text-lg font-semibold text-secondary">
+                  {faq.question}
+                </span>
+                <FontAwesomeIcon
+                  icon={activeIndex === index ? faChevronUp : faChevronDown}
+                  className="w-6 h-6 text-third transition-transform duration-200"
+                />
+              </button>
+              {activeIndex === index && (
+                <div className="px-6 pb-5 sm:px-8 sm:pb-6 font-lato text-third">
+                  <p>{faq.answer}</p>
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </section>

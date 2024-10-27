@@ -1,66 +1,76 @@
 import React from "react";
-import Img1 from "../assets/bali.jpg";
-import Img2 from "../assets/komodo.jpg";
-import Img3 from "../assets/jogja.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHeadset,
+  faHotel,
+  faTag,
+  faCar,
+} from "@fortawesome/free-solid-svg-icons";
 
-const services = [
+const menuItems = [
   {
-    title: "Paket Pesona Bali",
+    title: "Layanan 24/7",
     description:
-      "Nikmati keindahan pulau Bali dengan paket lengkap ini, yang mencakup kunjungan ke tempat-tempat ikonik seperti Ubud, Tanah Lot, dan Pantai Kuta. Paket ini termasuk akomodasi mewah, transportasi pribadi, serta pengalaman budaya seperti kelas memasak dan tari tradisional. Cocok untuk pasangan atau keluarga yang ingin menikmati liburan santai dan penuh eksplorasi.",
-    imgSrc: Img1,
+      "Tim customer service yang siap membantu Anda kapan saja, dari konsultasi hingga pengaduan masalah.",
+    icon: faHeadset,
   },
   {
-    title: "Paket Keajaiban Komodo",
+    title: "Penginapan",
     description:
-      "Jelajahi pulau-pulau menakjubkan di Taman Nasional Komodo, rumah bagi hewan purba, Komodo Dragon. Paket ini mencakup snorkeling di Pink Beach, trekking di Pulau Rinca, dan pelayaran di sekitar kepulauan Komodo. Dengan pemandu berpengalaman, Anda akan mendapatkan pengalaman mendalam tentang flora dan fauna unik di area ini. Ideal untuk pecinta alam dan petualangan.",
-    imgSrc: Img2,
+      "Pilihan akomodasi terbaik mulai dari hotel mewah, vila, hingga homestay lokal di berbagai destinasi di Indonesia.",
+    icon: faHotel,
   },
   {
-    title: "Paket Eksplorasi Yogyakarta",
+    title: "Diskon dan Promo",
     description:
-      "Temukan kekayaan budaya dan sejarah Yogyakarta melalui paket ini, yang mencakup kunjungan ke Candi Borobudur, Candi Prambanan, dan Keraton Yogyakarta. Paket ini juga mencakup pengalaman lokal seperti bersepeda di sekitar pedesaan dan mencicipi kuliner khas. Cocok untuk wisatawan yang ingin merasakan kekayaan budaya dan tradisi Indonesia.",
-    imgSrc: Img3,
+      "Diskon menarik dan promo musiman untuk perjalanan hemat dan menyenangkan.",
+    icon: faTag,
+  },
+  {
+    title: "Sewa Kendaraan",
+    description:
+      "Layanan sewa mobil dan motor untuk mempermudah mobilitas Anda selama liburan.",
+    icon: faCar,
   },
 ];
 
-const ServicesItems = ({ title, description, imgSrc }) => (
-  <div className="grid gap-6 rounded-md border border-solid border-gray-300 p-8 md:p-10">
-    <img
-      src={imgSrc}
-      alt={title}
-      className="inline-block h-16 w-16 object-cover rounded-full"
-    />
-    <h3 className="text-xl font-semibold">{title}</h3>
-    <p className="text-sm text-gray-500 -mt-4">{description}</p>
-  </div>
-);
-
-const Services = () => {
+function Services() {
   return (
     <section id="services">
       <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
         <div className="mx-auto max-w-2xl lg:text-center flex flex-col items-center">
-          <h2 className="text-base font-semibold leading-7 text-text">
-            Package
+          <h2 className="text-base font-semibold font-lato leading-7 text-third">
+            Services
           </h2>
-          <p className="mt-2 mb-8 text-3xl font-bold tracking-tight text-black sm:text-4xl text-center">
-            Paket NusaTrip
+          <p className="text-3xl font-bold tracking-tight font-poppins text-primary sm:text-4xl text-center">
+            Layanan Kami
+          </p>
+          <p className="mt-2 text-lg leading-8 font-lato text-secondary text-center">
+            NusaTrip menyediakan berbagai layanan yang dapat wisatawan gunakan
+            dan manfaatkan dalam proses perjalanan mereka.
           </p>
         </div>
-        <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-3 md:gap-4 lg:gap-6">
-          {services.map((service, index) => (
-            <ServicesItems
+
+        <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+          {menuItems.map((item, index) => (
+            <div
               key={index}
-              title={service.title}
-              description={service.description}
-              imgSrc={service.imgSrc}
-            />
+              className="block rounded-xl border border-gray-400 p-8 shadow-lg transition hover:border-primary hover:shadow-primary/10">
+              <div className="text-center mb-4 text-4xl text-primary">
+                <FontAwesomeIcon icon={item.icon} />
+              </div>
+              <h2 className="mt-4 text-xl font-bold font-poppins text-secondary text-center">
+                {item.title}
+              </h2>
+              <p className="mt-1 text-sm text-third font-lato text-center">
+                {item.description}
+              </p>
+            </div>
           ))}
         </div>
       </div>
     </section>
   );
-};
+}
 
 export default Services;

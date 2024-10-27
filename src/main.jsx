@@ -9,8 +9,8 @@ import Navbar from "./components/Navbar";
 import Slide from "./components/Slide";
 import About from "./components/About";
 import Events from "./components/Events";
-import Facility from "./components/Facility";
 import Services from "./components/Services";
+import Package from "./components/Package";
 import Gallery from "./components/Gallery";
 import Sponsor from "./components/Sponsor";
 import Faq from "./components/Faq";
@@ -22,8 +22,8 @@ createRoot(document.getElementById("root")).render(
     <Slide />
     <About />
     <Events />
-    <Facility />
     <Services />
+    <Package />
     <Gallery />
     <Sponsor />
     <Faq />

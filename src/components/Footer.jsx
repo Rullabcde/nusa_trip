@@ -1,7 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faTiktok } from "@fortawesome/free-brands-svg-icons";
-import logo from "../assets/logo.png";
 
 const Footer = () => {
   return (
@@ -16,55 +15,55 @@ const Footer = () => {
                 width="65"
                 height="80"
                 decoding="async"
-                src={logo}
+                src="/logo.png"
               />
-              <span className="text-xl font-bold">NusaTrip</span>
+              <span className="text-xl font-poppins font-bold">NusaTrip</span>
             </a>
-            <p className="text-gray-400">Explore Beyond the Horizon!</p>
+            <p className="text-gray-400 font-montserrat">
+              Explore Beyond the Horizon!
+            </p>
           </div>
 
           <nav className="space-y-4 md:col-span-2">
-            <h3 className="text-lg font-semibold">Navigation</h3>
-            <ul className="grid grid-cols-2 gap-2">
+            <h3 className="text-lg font-poppins font-semibold">Navigation</h3>
+            <ul className="grid grid-cols-2 font-lato gap-2">
               <li>
                 <a
-                  className="transition-colors hover:text-blue-400"
+                  className="transition-colors hover:text-primary"
                   href="#home">
                   Home
                 </a>
               </li>
               <li>
                 <a
-                  className="transition-colors hover:text-blue-400"
+                  className="transition-colors hover:text-primary"
                   href="#services">
                   Services
                 </a>
               </li>
               <li>
                 <a
-                  className="transition-colors hover:text-blue-400"
+                  className="transition-colors hover:text-primary"
                   href="#about">
                   About
                 </a>
               </li>
               <li>
                 <a
-                  className="transition-colors hover:text-blue-400"
+                  className="transition-colors hover:text-primary"
                   href="#gallery">
                   Gallery
                 </a>
               </li>
               <li>
                 <a
-                  className="transition-colors hover:text-blue-400"
+                  className="transition-colors hover:text-primary"
                   href="#event">
                   Event
                 </a>
               </li>
               <li>
-                <a
-                  className="transition-colors hover:text-blue-400"
-                  href="#faq">
+                <a className="transition-colors hover:text-primary" href="#faq">
                   FAQ
                 </a>
               </li>
@@ -72,12 +71,12 @@ const Footer = () => {
           </nav>
 
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Contact Us</h3>
+            <h3 className="text-lg font-poppins font-semibold">Contact Us</h3>
             <div className="flex space-x-4">
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-colors hover:text-blue-400"
+                className="transition-colors hover:text-primary"
                 href="https://instagram.com/">
                 <FontAwesomeIcon icon={faInstagram} size="2x" />
                 <span className="sr-only">Instagram</span>
@@ -85,17 +84,25 @@ const Footer = () => {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-colors hover:text-blue-400"
+                className="transition-colors hover:text-primary"
                 href="https://tiktok.com/">
                 <FontAwesomeIcon icon={faTiktok} size="2x" />
                 <span className="sr-only">TikTok</span>
               </a>
             </div>
+            <div className="mt-4">
+              <p className="text-gray-400 font-montserrat">
+                Email: <a href="#">nusatrip@gmail.com</a>
+              </p>
+              <p className="text-gray-400 font-montserrat">
+                Phone: <a href="#">+1234567890</a>
+              </p>
+            </div>
           </div>
         </div>
 
-        <div className="pt-8 mt-8 text-center text-gray-400 border-t border-gray-800">
-          <p>© 2024 NusaTrip. All rights reserved.</p>
+        <div className="pt-8 mt-8 text-center font-lato text-gray-400 border-t border-gray-800">
+          <p>&copy; 2024 NusaTrip. All rights reserved.</p>
         </div>
       </div>
     </footer>

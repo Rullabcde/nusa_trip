@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import { motion } from "framer-motion";
-import Img1 from "../assets/festival.jpg";
-import Img2 from "../assets/wellness.jpg";
-import Img3 from "../assets/fashionweek.jpg";
 
 const EventSlider = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -29,7 +26,8 @@ const EventSlider = () => {
         "Festival Budaya Yogyakarta merupakan perayaan tahunan yang menampilkan kekayaan seni dan budaya lokal. Event ini mencakup pertunjukan tari tradisional, pameran seni, dan bazar kuliner khas Yogyakarta. Para pengunjung dapat menikmati berbagai atraksi budaya dan kegiatan interaktif, serta berkesempatan untuk berpartisipasi dalam workshop seni.",
       location: "Alun-Alun Kidul, Yogyakarta",
       time: "09:00 - 21:00 WIB",
-      image: Img1,
+      image: "/festival.jpg",
+      alt: "Festival Budaya Yogyakarta",
     },
     {
       title: "Bali Wellness Festival",
@@ -39,7 +37,8 @@ const EventSlider = () => {
         "Bali Wellness Festival adalah acara yang didedikasikan untuk kesehatan dan kesejahteraan, menampilkan berbagai sesi yoga, meditasi, dan workshop kesehatan. Dengan pemateri ahli dari berbagai bidang, acara ini bertujuan untuk memberikan inspirasi dan pengetahuan tentang gaya hidup sehat. Pengunjung juga dapat menikmati makanan sehat dan produk organik di bazar festival.",
       location: "The Nusa Dua Beach Hotel & Spa, Bali",
       time: "10:00 - 18:00 WITA",
-      image: Img2,
+      image: "/wellness.jpg",
+      alt: "Bali Wellness Festival",
     },
     {
       title: "Jakarta Fashion Week",
@@ -49,7 +48,8 @@ const EventSlider = () => {
         "Jakarta Fashion Week adalah acara tahunan yang menampilkan koleksi terbaru desainer lokal dan internasional. Selama seminggu penuh, pengunjung dapat menyaksikan pertunjukan fashion, mengikuti seminar, dan berpartisipasi dalam sesi networking di industri mode. Acara ini menjadi platform bagi desainer untuk menunjukkan karya mereka dan meningkatkan industri mode di Indonesia.",
       location: "Senayan City, Jakarta",
       time: "10:00 - 22:00 WIB",
-      image: Img3,
+      image: "/fashionweek.jpg",
+      alt: "Jakarta Fashion Week",
     },
   ];
 
@@ -92,12 +92,15 @@ const EventSlider = () => {
 
   return (
     <section id="event">
-      <div className="max-w-4xl mx-auto py-10">
+      <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
         <div className="mx-auto max-w-2xl lg:text-center flex flex-col items-center">
-          <p className="text-3xl font-bold tracking-tight text-gray-800 sm:text-4xl text-center">
+          <h2 className="text-base font-semibold font-lato leading-7 text-third">
+            Events
+          </h2>
+          <p className="text-3xl font-bold font-poppins tracking-tight text-primary sm:text-4xl text-center">
             Event Kami
           </p>
-          <p className="mt-2 mb-10 text-lg leading-8 text-gray-600 text-center">
+          <p className="mt-2 mb-10 text-lg leading-8 font-lato text-secondary text-center">
             NusaTrip menyediakan beberapa event yang menarik dan pastinya seru
             untuk dinikmati para wisatawan.
           </p>
@@ -115,11 +118,13 @@ const EventSlider = () => {
                     className="w-full h-48 md:h-60 object-cover"
                   />
                   <div className="p-4 md:p-6">
-                    <h3 className="text-lg md:text-xl font-semibold">
+                    <h3 className="text-lg md:text-xl font-semibold font-poppins">
                       {event.title}
                     </h3>
-                    <p className="text-gray-600">{event.date}</p>
-                    <p className="mt-2 text-gray-700">{event.description}</p>
+                    <p className="text-third font-lato">{event.date}</p>
+                    <p className="mt-2 text-third font-lato">
+                      {event.description}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -128,18 +133,17 @@ const EventSlider = () => {
         </div>
       </div>
 
-      {/* Custom Modal with animation */}
+      {/* Custom Modal */}
       {isModalOpen && selectedEvent && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
           onClick={handleOverlayClick}>
           <motion.div
             className="bg-white rounded-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto relative"
-            initial={{ opacity: 0, scale: 0.9 }} // Initial state for animation
-            animate={{ opacity: 1, scale: 1 }} // Animate to full opacity and scale
-            exit={{ opacity: 0, scale: 0.9 }} // Animation for exiting
-            transition={{ duration: 0.3 }} // Animation duration
-          >
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.3 }}>
             <button
               onClick={closeModal}
               className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl font-bold z-10">
@@ -147,7 +151,7 @@ const EventSlider = () => {
             </button>
 
             <div className="p-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+              <h2 className="text-2xl font-bold font-poppins text-gray-900 mb-4">
                 {selectedEvent.title}
               </h2>
 
@@ -162,7 +166,7 @@ const EventSlider = () => {
                   <h3 className="font-semibold text-gray-900 mb-2">
                     Waktu dan Tempat
                   </h3>
-                  <div className="space-y-1 text-gray-600">
+                  <div className="space-y-1 text-third">
                     <p className="flex items-center gap-2">
                       <span className="font-medium">Tanggal:</span>{" "}
                       {selectedEvent.date}
@@ -182,7 +186,7 @@ const EventSlider = () => {
                   <h3 className="font-semibold text-gray-900 mb-2">
                     Deskripsi Event
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-third font-lato leading-relaxed">
                     {selectedEvent.longDescription}
                   </p>
                 </div>
