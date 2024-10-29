@@ -6,13 +6,13 @@ function Sponsor() {
   ];
 
   return (
-    <section id="sponsor" className="flex items-center justify-center py-16">
-      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:text-center flex flex-col items-center">
-          <h2 className="text-base font-semibold font-lato leading-7 text-third">
+    <section id="sponsor" className="flex items-center justify-center pt-16">
+      <div className="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
+        <div className="flex flex-col items-center max-w-2xl mx-auto lg:text-center">
+          <h2 className="text-base font-semibold leading-7 font-lato text-third">
             Partner
           </h2>
-          <p className="mb-10 text-3xl font-bold font-poppins tracking-tight text-primary sm:text-4xl text-center">
+          <p className="mb-10 text-3xl font-bold tracking-tight text-center font-poppins text-primary sm:text-4xl">
             Kami Juga Bekerjasama Dengan
           </p>
         </div>
@@ -20,7 +20,7 @@ function Sponsor() {
           {sponsors.map((sponsor) => (
             <div key={sponsor.id} className="flex justify-center">
               <img
-                className="mx-auto h-24 w-auto object-contain"
+                className="object-contain w-auto h-24 mx-auto"
                 src={sponsor.src}
                 alt={sponsor.alt}
               />

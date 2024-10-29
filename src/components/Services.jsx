@@ -36,33 +36,33 @@ const menuItems = [
 
 function Services() {
   return (
-    <section id="services">
-      <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
-        <div className="mx-auto max-w-2xl lg:text-center flex flex-col items-center">
-          <h2 className="text-base font-semibold font-lato leading-7 text-third">
+    <section id="services" className="pt-16">
+      <div className="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+        <div className="flex flex-col items-center max-w-2xl mx-auto lg:text-center">
+          <h2 className="text-base font-semibold leading-7 font-lato text-third">
             Services
           </h2>
-          <p className="text-3xl font-bold tracking-tight font-poppins text-primary sm:text-4xl text-center">
+          <p className="text-3xl font-bold tracking-tight text-center font-poppins text-primary sm:text-4xl">
             Layanan Kami
           </p>
-          <p className="mt-2 text-lg leading-8 font-lato text-secondary text-center">
+          <p className="mt-2 text-lg leading-8 text-center font-lato text-secondary">
             NusaTrip menyediakan berbagai layanan yang dapat wisatawan gunakan
             dan manfaatkan dalam proses perjalanan mereka.
           </p>
         </div>
 
-        <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-8 mt-8 md:grid-cols-2 lg:grid-cols-4">
           {menuItems.map((item, index) => (
             <div
               key={index}
-              className="block rounded-xl border border-gray-400 p-8 shadow-lg transition hover:border-primary hover:shadow-primary/10">
-              <div className="text-center mb-4 text-4xl text-primary">
+              className="block p-8 transition border border-gray-400 shadow-lg rounded-xl hover:border-primary hover:shadow-primary/10">
+              <div className="mb-4 text-4xl text-center text-primary">
                 <FontAwesomeIcon icon={item.icon} />
               </div>
-              <h2 className="mt-4 text-xl font-bold font-poppins text-secondary text-center">
+              <h2 className="mt-4 text-xl font-bold text-center font-poppins text-secondary">
                 {item.title}
               </h2>
-              <p className="mt-1 text-sm text-third font-lato text-center">
+              <p className="mt-1 text-sm text-center text-third font-lato">
                 {item.description}
               </p>
             </div>

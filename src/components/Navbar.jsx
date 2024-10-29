@@ -45,16 +45,16 @@ const Navbar = () => {
       className={`fixed w-full top-0 z-50 transition-all duration-300 ${
         isScrolled ? "bg-white/80 backdrop-blur-sm shadow-md" : "bg-white"
       }`}>
-      <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
+      <div className="flex items-center justify-between max-w-screen-xl p-4 mx-auto">
         <a href="#home" className="flex items-center gap-3">
           <img src="/logo.png" className="h-8" alt="Logo" />
-          <span className="text-2xl text-logo font-bold whitespace-nowrap font-playfair">
+          <span className="text-2xl font-bold text-logo whitespace-nowrap font-playfair">
             NusaTrip
           </span>
         </a>
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 text-gray-700 hover:bg-gray-100 rounded-lg"
+          className="p-2 text-gray-700 rounded-lg md:hidden hover:bg-gray-100"
           aria-label="Toggle menu">
           <FontAwesomeIcon icon={faBars} className="w-5 h-5" />
         </button>
@@ -62,7 +62,7 @@ const Navbar = () => {
           className={`${
             isOpen ? "block" : "hidden"
           } absolute top-full left-0 right-0 md:static md:block md:w-auto bg-white md:bg-transparent shadow-md md:shadow-none`}>
-          <ul className="flex flex-col md:flex-row md:gap-8 p-4 md:p-0 font-lato">
+          <ul className="flex flex-col p-4 md:flex-row md:gap-8 md:p-0 font-lato">
             {navLinks.map((link) => (
               <li key={link.name}>
                 <a

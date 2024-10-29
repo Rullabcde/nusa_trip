@@ -38,13 +38,13 @@ const Faq = () => {
   };
 
   return (
-    <section id="faq">
-      <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-base font-semibold font-lato leading-7 text-third">
+    <section id="faq" className="pt-16">
+      <div className="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+        <div className="mb-12 text-center">
+          <h2 className="text-base font-semibold leading-7 font-lato text-third">
             FAQ
           </h2>
-          <p className="text-3xl font-bold font-poppins tracking-tight text-primary sm:text-4xl">
+          <p className="text-3xl font-bold tracking-tight font-poppins text-primary sm:text-4xl">
             Paling Sering Ditanyakan
           </p>
         </div>
@@ -52,7 +52,7 @@ const Faq = () => {
           {faqData.map((faq, index) => (
             <div
               key={index}
-              className="transition-all duration-300 bg-white border border-gray-200 shadow-lg rounded-lg cursor-pointer mb-4 hover:shadow-xl">
+              className="mb-4 transition-all duration-300 bg-white border border-gray-200 rounded-lg shadow-lg cursor-pointer hover:shadow-xl">
               <button
                 onClick={() => toggleFaq(index)}
                 className="flex items-center justify-between w-full px-6 py-5 sm:p-6">
@@ -61,7 +61,7 @@ const Faq = () => {
                 </span>
                 <FontAwesomeIcon
                   icon={activeIndex === index ? faChevronUp : faChevronDown}
-                  className="w-6 h-6 text-third transition-transform duration-200"
+                  className="w-6 h-6 transition-transform duration-200 text-third"
                 />
               </button>
               {activeIndex === index && (

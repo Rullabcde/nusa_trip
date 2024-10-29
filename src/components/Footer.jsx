@@ -17,7 +17,7 @@ const Footer = () => {
                 decoding="async"
                 src="/logo.png"
               />
-              <span className="text-xl font-poppins font-bold">NusaTrip</span>
+              <span className="text-xl font-bold font-poppins">NusaTrip</span>
             </a>
             <p className="text-gray-400 font-montserrat">
               Explore Beyond the Horizon!
@@ -25,8 +25,8 @@ const Footer = () => {
           </div>
 
           <nav className="space-y-4 md:col-span-2">
-            <h3 className="text-lg font-poppins font-semibold">Navigation</h3>
-            <ul className="grid grid-cols-2 font-lato gap-2">
+            <h3 className="text-lg font-semibold font-poppins">Navigation</h3>
+            <ul className="grid grid-cols-2 gap-2 font-lato">
               <li>
                 <a
                   className="transition-colors hover:text-primary"
@@ -71,7 +71,7 @@ const Footer = () => {
           </nav>
 
           <div className="space-y-4">
-            <h3 className="text-lg font-poppins font-semibold">Contact Us</h3>
+            <h3 className="text-lg font-semibold font-poppins">Contact Us</h3>
             <div className="flex space-x-4">
               <a
                 target="_blank"
@@ -101,7 +101,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="pt-8 mt-8 text-center font-lato text-gray-400 border-t border-gray-800">
+        <div className="pt-8 mt-8 text-center text-gray-400 border-t border-gray-800 font-lato">
           <p>&copy; 2024 NusaTrip. All rights reserved.</p>
         </div>
       </div>
