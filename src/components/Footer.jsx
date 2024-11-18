@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram, faTiktok } from "@fortawesome/free-brands-svg-icons";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
   return (
@@ -17,7 +18,7 @@ const Footer = () => {
                 decoding="async"
                 src="/logo.png"
               />
-              <span className="text-xl font-bold font-poppins">NusaTrip</span>
+              <span className="text-xl font-bold ">NusaTrip</span>
             </a>
             <p className="text-gray-400 font-montserrat">
               Explore Beyond the Horizon!
@@ -82,20 +83,19 @@ const Footer = () => {
                 <span className="sr-only">Instagram</span>
               </a>
               <a
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-colors hover:text-primary"
-                href="https://tiktok.com/">
-                <FontAwesomeIcon icon={faTiktok} size="2x" />
-                <span className="sr-only">TikTok</span>
+                href="mailto:nusatrip@gmail.com"
+                className="transition-colors hover:text-primary">
+                <FontAwesomeIcon icon={faEnvelope} size="2x" />
+                <span className="sr-only">Email</span>
               </a>
             </div>
             <div className="mt-4">
               <p className="text-gray-400 font-montserrat">
-                Email: <a href="#">nusatrip@gmail.com</a>
+                Email:{" "}
+                <a href="mailto:nusatrip@gmail.com">nusatrip@gmail.com</a>
               </p>
               <p className="text-gray-400 font-montserrat">
-                Phone: <a href="#">+1234567890</a>
+                Phone: <a href="tel:+1234567890">+62 123456789</a>
               </p>
             </div>
           </div>

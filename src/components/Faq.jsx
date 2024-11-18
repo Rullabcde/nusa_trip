@@ -55,13 +55,13 @@ const Faq = () => {
               className="mb-4 transition-all duration-300 bg-white border border-gray-200 rounded-lg shadow-lg cursor-pointer hover:shadow-xl">
               <button
                 onClick={() => toggleFaq(index)}
-                className="flex items-center justify-between w-full px-6 py-5 sm:p-6">
-                <span className="text-lg font-semibold text-secondary">
+                className="flex items-center w-full px-6 py-5 sm:p-6">
+                <span className="flex-1 text-lg font-semibold text-left text-secondary">
                   {faq.question}
                 </span>
                 <FontAwesomeIcon
                   icon={activeIndex === index ? faChevronUp : faChevronDown}
-                  className="w-6 h-6 transition-transform duration-200 text-third"
+                  className="w-6 h-6 ml-4 transition-transform duration-200 shrink-0 text-third"
                 />
               </button>
               {activeIndex === index && (

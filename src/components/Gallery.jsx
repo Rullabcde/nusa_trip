@@ -30,7 +30,7 @@ const Gallery = () => {
   };
 
   return (
-    <section id="gallery" className="pt-16 overflow-hidden">
+    <section id="gallery" className="overflow-hidden">
       <div className="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 sm:py-12 lg:px-8 lg:py-16">
         <div className="flex flex-col items-center max-w-2xl mx-auto lg:text-center">
           <h2 className="text-base font-semibold leading-7 font-lato text-third">

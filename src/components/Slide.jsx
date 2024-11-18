@@ -24,6 +24,7 @@ const images = [
 const Slide = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   const nextSlide = useCallback(() => {
     setCurrentIndex((prevIndex) =>
@@ -35,6 +36,16 @@ const Slide = () => {
     const interval = setInterval(nextSlide, 5000);
     return () => clearInterval(interval);
   }, [nextSlide]);
+
+  // Handle scroll event
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const preloadImages = async () => {
@@ -69,6 +80,8 @@ const Slide = () => {
     );
   }
 
+  const parallaxOffset = scrollPosition * 0.5;
+
   return (
     <section id="home" className="relative">
       <div className="relative w-full" data-carousel="slide">
@@ -80,18 +93,26 @@ const Slide = () => {
                 index === currentIndex ? "opacity-100" : "opacity-0"
               }`}
               data-carousel-item="true">
-              <img
-                src={image.src}
-                className="absolute object-cover w-full h-full"
-                alt={image.alt}
-                loading="lazy"
-                width="1920"
-                height="1080"
-              />
+              <div className="absolute inset-0 overflow-hidden">
+                <img
+                  src={image.src}
+                  className="absolute object-cover w-full h-full transition-transform duration-300 ease-out transform"
+                  alt={image.alt}
+                  loading="lazy"
+                  width="1920"
+                  height="1080"
+                  style={{
+                    transform: `translateY(${parallaxOffset}px) scale(1.1)`,
+                  }}
+                />
+              </div>
               <div className="absolute inset-0 bg-black bg-opacity-40"></div>
 
-              {/* Text Overlay */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-white">
+              <div
+                className="absolute inset-0 flex flex-col items-center justify-center p-4 text-white"
+                style={{
+                  transform: `translateY(${parallaxOffset * 0.2}px)`,
+                }}>
                 <h2 className="mb-4 text-4xl font-bold text-center transition-transform duration-700 transform translate-y-0 md:text-5xl lg:text-6xl">
                   {image.title}
                 </h2>
@@ -102,7 +123,6 @@ const Slide = () => {
             </div>
           ))}
 
-          {/* Slide Indicators */}
           <div className="absolute flex space-x-2 -translate-x-1/2 bottom-4 left-1/2">
             {images.map((_, index) => (
               <button

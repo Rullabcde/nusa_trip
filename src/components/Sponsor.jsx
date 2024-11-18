@@ -6,7 +6,7 @@ function Sponsor() {
   ];
 
   return (
-    <section id="sponsor" className="flex items-center justify-center pt-16">
+    <section id="sponsor" className="flex items-center justify-center">
       <div className="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
         <div className="flex flex-col items-center max-w-2xl mx-auto lg:text-center">
           <h2 className="text-base font-semibold leading-7 font-lato text-third">
